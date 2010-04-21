@@ -1,68 +1,81 @@
 % vim:tw=80:sw=4:ts=4:foldmethod=marker
-\documentclass[11pt]{resume}
+\documentclass{res}
 
 \usepackage{paralist}
+\usepackage{url}
 
-\author{Matthew Pearson}
-\email{mjp64@cornell.edu}
-\phone{781-572-6161}
+\name{Matthew Pearson \\[10pt]}
+\address{{\large mjp64@cornell.edu} \\[10pt] 106 Pine Hill Road \\ Bedford MA 01730}
+\address{{\large 781-572-6161} \\[10pt] 516 University Ave Apt C4 \\ Ithaca NY 14850}
 
 \begin{document}
+\begin{resume}
 
-\maketitle
-\\[6pt]
-\noindent\begin{tabular*}{\linewidth}{l@{\extracolsep{\fill}}l}
-106 Pine Hill Road & 516 University Ave Apt C4 \\
-Bedford, MA 01730  & Ithaca, NY 14850 \\
-\end{tabular*}
+\begin{format}
+\employer{l} \dates{r}\\
+\title{l}\\
+\body
+\end{format}
 
-% top needs cosmetic work
-% name at top in center; line below email and phone
-% address ok
-% objective?
+\newcommand{\affiliation}[3]{%
+	\title{#1}%
+	\employer{#2}%
+	\dates{\it #3}%
+}
 
-\section{Education}
+\newenvironment{pos}{%
+	\begin{position}%
+	\vspace{-10pt}
+	\begin{compactitem}%
+}{%
+	\end{compactitem}%
+	\end{position}%
+}
+
+\newcommand{\mysec}[1]{\section{\large\sc{#1}}}
+
+\mysec{Education}
 
 \affiliation
-	[MEng, Computer Science]
+	{MEng, Computer Science}
 	{Cornell University Graduate School}
 	{May 2010}
-	\begin{compactitem}
+	\begin{pos}
 	\item First semester GPA: 3.3
 	\item MEng project: Live Distributed Objects (\url{http://liveobjects.cs.cornell.edu})
-	\end{compactitem}
+	\end{pos}
 
 \affiliation
-	[BS, Computer Science]
+	{BS, Computer Science}
 	{Cornell University College of Engineering}
 	{May 2009}
-	\begin{compactitem}
+	\begin{pos}
 	\item Cumulative GPA: 3.7
 	\item Concentration: Electrical and Computer Engineering
-	\end{compactitem}
+	\end{pos}
 
-\section{Experience}
+\mysec{Experience}
 
 \affiliation
-	[Technical Intern]
-	{Deitel \& Associates, Inc.}
+	{Technical Intern}
+	{Deitel \& Associates, Inc., Maynard, MA}
 	{May 2008--November 2009}
-	\begin{compactitem}
+	\begin{pos}
 	\item Created and updated chapters of programming textbooks
 	\item Created and explained illustrative code examples
 	\item Worked summers and over winter break
 	\item Wrote chapters on Introduction to LINQ (Language Integrated Query),
 	LINQ to XML, and LINQ to SQL for {\it Visual Basic 2008 How to Program} and
 	{\it Visual C\# 2008 How to Program}
-	\item Improved services chapter for {\it Java How to Program}
+	\item Improved web services chapter for {\it Java How to Program}
 	\item Updated game-programming and new-standard chapters for C and C++ books
-	\end{compactitem}
+	\end{pos}
 
 \affiliation
-	[Consultant/TA]
-	{Cornell University Department of Computer Science}
+	{Consultant/TA}
+	{Cornell University School of Computer Science}
 	{August 2006--present}
-	\begin{compactitem}
+	\begin{pos}
 	\item Assist with grading
 	\item Hold office hours to help students with programming
 	projects
@@ -74,32 +87,32 @@ Bedford, MA 01730  & Ithaca, NY 14850 \\
 		\item 2009--2010 academic year: CS 2110 (Object-Oriented Programming and
 		Data Structures)
 		\end{compactitem}
-	\end{compactitem}
+	\end{pos}
 
 \affiliation
-	[Desktop Support]
+	{Desktop Support}
 	{Fresenius Medical Care NA, Waltham, MA}
 	{June 2005--January 2008}
-	\begin{compactitem}
+	\begin{pos}
 	\item Worked summers and over winter breaks
 	\item Configured new desktops and laptops
-	\item Customer service position: personal, one-on-one contact with users
 	\item Troubleshot issues in a corporate environment
-	\end{compactitem}
+	\item Customer service position: personal, one-on-one contact with users
+	\end{pos}
 
-\section{Skills}
-	\vspace{\secskip}
+\mysec{Skills}
+	\vspace{10pt}
 	\begin{compactitem}
 	\item Programming languages: C, C++, Java, Python, C\#, VB.NET, PHP, Lua
-	\item Professional document creation with Adobe FrameMaker and \LaTeX{}
+	\item Professional typesetting with Adobe FrameMaker and \LaTeX{}
 	\item Technical writing (primarily explaining code)
 	\item Linux server administration (Debian, Ubuntu)
 		\begin{compactitem}
 		\item Apache web server
 		\item Mediawiki
 		\item MySQL database
-		\item Hosting for Git version control repositories
 		\end{compactitem}
 	\end{compactitem}
 
+\end{resume}
 \end{document}
