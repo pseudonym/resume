@@ -2,7 +2,7 @@
 
 all : resume.pdf
 
-resume.pdf : resume.tex
+resume.pdf : resume.tex res.cls
 	pdflatex resume.tex
 
 clean :
